@@ -1,0 +1,35 @@
+<app-header titulo="agendar cita"></app-header>
+
+<ion-content >
+    <br>
+        <ion-card>
+            <ion-calendar
+            [(ngModel)]="dateRange" 
+            [options]="optionsRange" 
+            [type]="type" 
+            [format]="'YYYY-MM-DD'">
+            </ion-calendar>
+        </ion-card>
+      
+        <ion-item>
+            <ion-label>Hora de consulta</ion-label>
+            <ion-select placeholder="Seleccione">
+              <ion-select-option value="f">12:00</ion-select-option>
+              <ion-select-option value="m">12:40</ion-select-option>
+            </ion-select>
+          </ion-item>  
+      
+           
+        <ion-item>
+            <ion-label>Medico</ion-label>
+            <ion-select placeholder="Seleccione">
+              <ion-select-option value="f">Juan</ion-select-option>
+              <ion-select-option value="m">Pedro</ion-select-option>
+            </ion-select>
+          </ion-item>  
+   <br>
+          <ion-button color="primary"  shape="round" expand="block" routerLink ="/inicio">
+            GUARDAR CITA MÉDICA
+          </ion-button>
+    
+</ion-content>

@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title size="undefined" style="font-family:Verdana, Geneva, Tahoma, sans-serif" align="center">Blue Medic
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <app-header titulo="INICIO"></app-header> -->
+
+<ion-content color="tertiary">
+<br>
+  <ion-card>
+  
+    <!-- <img src="assets/icon/logoM.png"> -->
+    <br>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6" routerLink="/agendarcita">
+          <ion-card color="tertiary">
+            <img src="assets/imagenes/agendar.png">
+          </ion-card>
+
+          <ion-title color="primary" size="undefined"
+            style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" align="center">
+            <b>Agendar</b> </ion-title>
+
+        </ion-col>
+        <ion-col size="6" routerLink="/historial-cliente">
+          <ion-card color="tertiary">
+            <img src="assets/imagenes/historial.png">
+          </ion-card>
+          <ion-title color="primary" size="undefined"
+            style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" align="center">
+            <b>Historial</b></ion-title>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6" routerLink="/contacto">
+          <ion-card color="tertiary">
+            <img src="assets/imagenes/contactos.png">
+          </ion-card>
+          <ion-title color="primary" size="undefined"
+            style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;" align="center">
+            <b>Contacto</b> </ion-title>
+        </ion-col>
+        <ion-col size="6" routerLink="/citas-agendadas">
+          <ion-card color="tertiary">
+            <img src="assets/imagenes/cita.png">
+          </ion-card>
+          <ion-title color="primary" size="undefined"
+            style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;" 
+            align="center"> <b>
+              Ver Cita</b></ion-title>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+    <br>
+  </ion-card>
+
+
+
+</ion-content>
