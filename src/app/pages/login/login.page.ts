@@ -18,11 +18,14 @@ import { Router } from '@angular/router';
 
 export class LoginPage implements OnInit {
   ping:any;
-  usuario:string='administrador';
-  temporalclave:string='1234';
+ 
   Datos:any=[]
   loginForm:FormGroup;
-
+  passwordShown = false;
+  nameicon = 'eye-off';
+  passwordtipo = 'password';
+  usuario='gabriel';
+  temporalclave='1234';
   constructor
   (
 private menu:MenuController, 
@@ -38,18 +41,12 @@ private router:Router
   {/* bloquear menu en login */
     this.menu.enable(false,'first');
 
-    this.loginForm = formBuilder.group({
-      usuario: ["administrador", Validators.required],
-      temporalclave: ["1234", Validators.required],
-    }); 
-
     
    }
 
   ngOnInit() {}
 
   async login() {
-    //this.mensaje('ingreso..');
 
     const loading = await this.loadingController.create({
       message: "Por favor espere...",
@@ -57,21 +54,22 @@ private router:Router
     loading.present();
 
     this.webServiceMedica
-      .login(this.loginForm.value.usuario, this.loginForm.value.temporalclave)
+      .login( this.usuario, this.temporalclave)
       .subscribe(
         (success: any) => {
           loading.dismiss();
 
-          console.log('estoy aqui');
+          console.log('estiy aqui',success);
 
-          if (success.usuario == undefined) {
-           
-            this.mensajeToast("Datos Incorrectos");
+          if (success.usuario == undefined && success.temporalclave == undefined) 
+          {
+               this.mensajeToast("Datos Incorrectos");
           } else {
          
-            this.router.navigateByUrl('inicio' );
-        
+          localStorage.setItem("id_rol",success.id_rol);
+            this.router.navigateByUrl('tabs/inicio' );
           }
+          
         },
 
         (errornet) => {
@@ -94,5 +92,17 @@ private router:Router
       buttons: ["OK"],
     });
     await alert.present();
+  }
+
+  togglePass(){
+if(this.passwordShown){
+  this.passwordShown = false;
+  this.passwordtipo = 'password';
+  this.nameicon = 'eye-off';
+}else{
+  this.passwordShown = true;
+  this.passwordtipo = 'text';
+  this.nameicon = 'eye';
+}
   }
 }

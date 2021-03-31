@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  public menu = [
+ /*  public menu = [
     {
       title: 'Inicio',
       url: '/inicio',
@@ -28,6 +28,6 @@ export class AppComponent {
       url: '/login',
       icon: 'exit'
     }
-  ]
+  ] */
   constructor() {}
 }

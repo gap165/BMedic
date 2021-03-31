@@ -28,18 +28,32 @@ const routes: Routes = [
     path: 'contacto',
     loadChildren: () => import('./pages/contacto/contacto.module').then( m => m.ContactoPageModule)
   },
-  {
-    path: 'ficha-medica',
-    loadChildren: () => import('./pages/ficha-medica/ficha-medica.module').then( m => m.FichaMedicaPageModule)
-  },
+  
   {
     path: 'historial-cliente',
     loadChildren: () => import('./pages/historial-cliente/historial-cliente.module').then( m => m.HistorialClientePageModule)
   },
-  {
-    path: 'medicos',
-    loadChildren: () => import('./pages/medicos/medicos.module').then( m => m.MedicosPageModule)
+   {
+    path: 'tabs',
+    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
   },
+  {
+    path: 'list-medicos',
+    loadChildren: () => import('./pages/list-medicos/list-medicos.module').then( m => m.ListMedicosPageModule)
+  },
+  {
+    path: 'datos-paciente',
+    loadChildren: () => import('./pages/datos-paciente/datos-paciente.module').then( m => m.DatosPacientePageModule)
+  },
+  {
+    path: 'cita-paciente',
+    loadChildren: () => import('./pages/cita-paciente/cita-paciente.module').then( m => m.CitaPacientePageModule)
+  },
+  {
+    path: 'lista-pacientes',
+    loadChildren: () => import('./pages/lista-pacientes/lista-pacientes.module').then( m => m.ListaPacientesPageModule)
+  },
+  
 ];
 
 @NgModule({

@@ -13,12 +13,18 @@ URL= "http://localhost/wsbluemedic/"
      private http:HttpClient,
       private loadingController: LoadingController) { }
 
-    login(usuario, temporalclave) {
+    login(usuario,temporalclave) {
         let urlServer = this.URL + "usuarios.php";
         let body = new HttpParams();
         body = body.set("usuario", usuario);
         body = body.set("temporalclave", temporalclave);
         body = body.set("op", "login");
+        return this.http.post(urlServer, body, { responseType: "json" });
+      }
+      listmedicos() {
+        let urlServer = this.URL + "usuarios.php";
+        let body = new HttpParams();
+        body = body.set("op", "listmedicos");
         return this.http.post(urlServer, body, { responseType: "json" });
       }
 }

@@ -1,5 +1,7 @@
 {
   "name": "BMedic",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
